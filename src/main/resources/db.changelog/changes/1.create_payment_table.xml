@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="create_payment_table" author="Iryna Ohurtsova">
+        <sql>
+            CREATE TABLE IF NOT EXISTS `payment` (
+            `id` bigint NOT NULL AUTO_INCREMENT,
+            `last_name` varchar(50) NOT NULL,
+            `first_name` varchar(50) NOT NULL,
+            `patronymic` varchar(50) NOT NULL,
+            `sum` double NOT NULL,
+            `payment_status` varchar(50) NOT NULL,
+            PRIMARY KEY (`id`) );
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
