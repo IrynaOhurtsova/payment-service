@@ -17,7 +17,7 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
-    @PostMapping("/buy")
+    @PostMapping
     public PayTicketResultDto buyTicket(@RequestBody PayTicketDto payTicketDto) {
         return new PayTicketResultDto(paymentService.buyTicket(payTicketDto));
     }
@@ -32,10 +32,9 @@ public class PaymentController {
         return paymentService.findAllByPaymentStatus(paymentStatus);
     }
 
-    @PostMapping("/update")
+    @PutMapping
     public void saveAll(@RequestBody List<Payment> payments) {
         paymentService.saveAll(payments);
     }
-
 
 }
