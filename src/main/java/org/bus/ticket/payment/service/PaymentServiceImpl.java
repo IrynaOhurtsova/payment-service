@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static java.lang.String.format;
+
 @Service
 @RequiredArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
@@ -45,4 +47,11 @@ public class PaymentServiceImpl implements PaymentService {
     public void saveAll(List<Payment> payments) {
         paymentRepository.saveAll(payments);
     }
+
+    @Override
+    public Payment findById(long paymentId) {
+        return paymentRepository.findById(paymentId)
+                .orElseThrow(() -> new IllegalArgumentException(format("payment with id %s not found", paymentId)));
+    }
+
 }

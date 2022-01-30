@@ -27,7 +27,7 @@ public class PaymentController {
         return paymentService.getStatusById(paymentId);
     }
 
-    @GetMapping("/{status}")
+    @GetMapping("/status/{status}")
     public List<Payment> findAllByPaymentStatus(@PathVariable("status") PaymentStatus paymentStatus) {
         return paymentService.findAllByPaymentStatus(paymentStatus);
     }
@@ -35,6 +35,11 @@ public class PaymentController {
     @PutMapping
     public void saveAll(@RequestBody List<Payment> payments) {
         paymentService.saveAll(payments);
+    }
+
+    @GetMapping("/{paymentId}")
+    public Payment findById(@PathVariable("paymentId") long paymentId) {
+        return paymentService.findById(paymentId);
     }
 
 }
