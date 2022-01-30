@@ -26,8 +26,7 @@ public class PaymentServiceImpl implements PaymentService {
                 .sum(payTicketDto.getSum())
                 .paymentStatus(PaymentStatus.NEW)
                 .build();
-        paymentRepository.save(payment);
-        return payment.getId();
+        return paymentRepository.save(payment).getId();
     }
 
     @Override
