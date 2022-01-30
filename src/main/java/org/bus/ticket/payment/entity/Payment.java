@@ -9,10 +9,10 @@ import org.springframework.data.annotation.Id;
 public class Payment {
 
     @Id
-    long id;
-    String lastName;
-    String firstName;
-    String patronymic;
-    double sum;
-    PaymentStatus paymentStatus;
+    private long id;
+    private String lastName;
+    private String firstName;
+    private String patronymic;
+    private double sum;
+    private PaymentStatus paymentStatus;
 }
